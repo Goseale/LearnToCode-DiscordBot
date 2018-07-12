@@ -19,13 +19,13 @@ const token = settings.token;
 
 // Now to set up the environment.
 
-const Discord = require('discord.js')
-const client = new Discord.Client()
-client.login(token)
+const Discord = require('discord.js');
+const client = new Discord.Client();
+client.login(token);
 
 // Now to load the base events, except for the ready event
 
-require('./util/eventLoader')
+require('./util/eventLoader');
 
 // Now we make the bot send special messages to the console on launch
 
@@ -33,9 +33,9 @@ console.log(`Attempting a startup at: ${new Date()}`);
 
 // Now for successful launch message, and "activity"
 
-client.on("ready", client => {
-  console.log(`Successfully launched on ${new Date()}, logged in as user ${client.user.id}`)
-  client.setActivity(`LearnToCodeBOT | Prefix: ${prefix}`)
+client.on("ready", () => {
+  console.log(`Successfully launched on ${new Date()}, logged in as ${client.user.tag}`);
+  client.user.setActivity(`LearnToCodeBOT | Prefix: ${prefix}`);
 });
 
 // Usually, there would be a command handler here, but we're fancy and use things like Command handlers. =)
