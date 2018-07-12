@@ -20,7 +20,7 @@ const token = settings.token;
 // Now to set up the environment.
 
 const Discord = require('discord.js')
-const client = Discord.Client()
+const client = new Discord.Client()
 client.login(token)
 
 // Now to load the base events, except for the ready event
