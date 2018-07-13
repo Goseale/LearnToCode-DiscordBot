@@ -25,7 +25,7 @@ client.login(token)
 
 // Now to load the base events, except for the ready event
 
-require('./util/eventLoader');
+require('./util/eventLoader')(client);
 
 // Now we make the bot send special messages to the console on launch
 
