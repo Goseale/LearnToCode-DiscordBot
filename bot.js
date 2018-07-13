@@ -40,3 +40,20 @@ client.on("ready", () => {
 
 // Usually, there would be a command handler here, but we're fancy and use things like Command handlers. =)
 // All special events will be in the events folder as their own files while commands are in the commands folder in their own files.
+
+// Lets add our reload handler
+
+var reload = (message, cmd) => {
+	delete require.cache[require.resolve('./commands/' + cmd)];
+	try {
+		let cmdFile = require('./commands/' + cmd);
+	} catch (err) {
+		message.channel.send(`Problem loading ${cmd}: ${err}`).then(
+			response => response.delete(5000).catch(error => console.log(error.stack))
+		).catch(error => console.log(error.stack));
+	}
+	message.channel.send(`${cmd} reload was a success!`).then(
+		response => response.delete(5000).catch(error => console.log(error.stack))
+	).catch(error => console.log(error.stack));
+};
+exports.reload = reload;
