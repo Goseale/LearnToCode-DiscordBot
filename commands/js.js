@@ -93,7 +93,7 @@ second time. Now log the regular array again, and it should have logged everythi
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Arrays**\n**Array Actions**\n`Names are case sensitive`\n`~js <section>"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Arrays**\n**Array Actions**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
