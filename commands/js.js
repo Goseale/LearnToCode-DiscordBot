@@ -21,7 +21,8 @@ Maybe even single quotes (') if you don't care to escape them with backslashes."
                         value: "Open up your IDE/Text Editor and input the following\n \
 ```js\nconsole.log(typeof(1))```\n and replace \"1\" with any of the primitive types. Then run the code."
                     }
-                ]
+                ],
+                footer: "Author: Proxxa#0574"
 
             }
         })
@@ -48,6 +49,41 @@ third item, since JS is zero-indexed.\n **2.** Create your own array called `foo
 Go ahead, I'll still be here. Now do `console.log(foobar.shift())`. It should've returned the first item. \
 Now do `console.log(foobar[0])`. It should return the same thing. Right? Wrong. More on this in **Array Actions**."
                 },
+            ],
+            footer: "Author: Proxxa#0574"
+        }})
+    } else
+    if (args[0] === "Array" && args[1] === "Actions") {
+        message.channel.send({embed:{
+            color: 777777,
+            title: "LearnToCode BOT - Array Actions",
+            description: "Array actions, you saw one in the `Try it!` section of the Arrays course. These actions \
+can be used on regular strings if they're the correct actions. So, lets get right into it. `shift()`, as seen in \
+the `Try it!` section of `Arrays`, will not only `return` the first item in the array, but also removes it. \
+`split()` is a great one to use to separate each and every word of a string into a list. It can do that if its \
+entered parameter says `' '`, meaning to turn the string into an array, but they items separate on every space. \
+You can use it to also separate on every underscore (`_`) using `split('_')`, rinse and repeat for every character \
+you need to separate on. `slice()` is great for entirely removing an item. Want to remove item 3 of `foobar`? Just \
+use `foobar.slice(2)`, (2 since JS is zero indexed). You can also use this to remove certain characters or groups \
+of characters by separating the first and last characters you want to remove (If you want to remove the fourth to \
+eighth characters, use `slice(3,7)`.) with a comma (`,`). Characters are treated like items in an array with slice() \
+so rinse and repeat for your arrays. `pop()` is useful for taking away the LAST item from the end, and returning it \
+just like `shift()`. `push()` can add an item(s) to the end of the list, like this NEXT item. `unshift()` is just \
+like `push()`, but it adds items to the beginning, like the opposite of `shift()`.",
+            footer: "Author: Proxxa#0574",
+            fields: [
+                {
+                    name: "Try it!",
+                    value: "**1. **Create a javascript file (`.js`) that declares a variable called `func`, and set it to an array \
+with the first item `tion`, and then add nine more items of your choice. Now log the array to the console with your \
+old pal `console.log()`. You should know how to use it by now, so go ahead. Now log it again, but instead log \
+`func.shift()`. It only output `tion`. Cool, right? Now log just `func` again. Now it doesn't have `tion`, but it \
+replied with everything else. Now log `func.slice(x,x)` but place two numbers from 0 to 8. You can even do only one. \
+It just removed those permanantly from the array.\n**2.** Create a variable called `func` which is set to an array \
+in an entirely different file (Javascript again). Now use `unshift()` and `push()` to give the array some more items. \
+Now, I want you to log `func` before you log `func.pop()`. It should've logged just the last item in the array the \
+second time. Now log the regular array again, and it should have logged everything except for that last item.",
+                },
             ]
         }})
     } else
@@ -57,7 +93,7 @@ Now do `console.log(foobar[0])`. It should return the same thing. Right? Wrong. 
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Arrays**"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Arrays**\n**Array Actions**\n`Names are case sensitive`\n`~js <section>"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
