@@ -205,7 +205,7 @@ have any further questions, try doing `npm help` if it is a question on npm comm
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
