@@ -35,8 +35,24 @@ console.log(`Attempting a startup at: ${new Date()}`);
 
 client.on("ready", () => {
   console.log(`Successfully launched on ${new Date()}, logged in as ${client.user.tag}`);
-  client.user.setActivity(`LearnToCodeBOT | Prefix: ${prefix}`);
+  setInterval(120000,client.user.setActivity(`LearnToCodeBOT`));
+  setTimeout(60000,setInterval(120000,client.user.setActivity(`Prefix: ${prefix}`)))
 });
 
-// Usually, there would be a command handler here, but we're fancy and use things like Command handlers. =)
+// Usually, there would be a message handler here, but we're fancy and use things like exports. =)
 // All special events will be in the events folder as their own files while commands are in the commands folder in their own files.
+
+var reload = (message, cmd) => {
+	delete require.cache[require.resolve('./commands/' + cmd)];
+	try {
+		let cmdFile = require('./commands/' + cmd);
+	} catch (err) {
+		message.channel.send(`Problem loading ${cmd}: ${err}`).then(
+			response => response.delete(5000).catch(error => console.log(error.stack))
+		).catch(error => console.log(error.stack));
+	}
+	message.channel.send(`${cmd} reload was a success!`).then(
+		response => response.delete(5000).catch(error => console.log(error.stack))
+	).catch(error => console.log(error.stack));
+};
+exports.reload = reload;
