@@ -94,7 +94,7 @@ This function simply creates a variable called `foo` set to the string `bar`. No
 __scopes__. If you want to use it, just type `function()` wherever in your code, as long as it has an OK __scope__. \
 If we want this function to be useful, we need **parameters**. These go in the parenthesis (`()`), and we must \
 tell the function to ask for them. Here's a better function: ```js\nrandom(min,max) {\nlet diff = max - min;\n\
-return Math.floor((Math.random() * min) + diff)\n``` This will return a random integer between the inputs `min` \
+return Math.floor((Math.random() * diff) + min)\n``` This will return a random integer between the inputs `min` \
 and `max`. Lets say our minimum is 1 and max is 6. We should call random() by using `random(1,6)`. Commas (`,`) \
 separate parameters. Use a parameter inside of the function (and only inside of) by calling it like a variable.",
             fields: [
