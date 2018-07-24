@@ -189,6 +189,16 @@ time by pressing `CTRL + C`",
         color: 777777
     }})
     } else
+    if (args[0] === "NPM" && args[1] === "Package" && args[2] === "Installation") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - NPM Package Installation",
+            description: "Installing a NPM Package is easy. Once you've set up your package.json, just go to npmjs.com \
+and find a package you fancy. Now open your command prompt again, **direct it to your app folder**, then type **__`npm\
+ i <packageName>`__**. and thats it. Of course, replace `<packageName>` with the name of the package.\n If you \
+have any further questions, try doing `npm help` if it is a question on npm commands",
+            color: 777777
+        }})
+    } else
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
