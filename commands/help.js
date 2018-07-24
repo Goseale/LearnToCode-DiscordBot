@@ -8,11 +8,11 @@ exports.run = function (client, message, args) {
         fields: [
             {
                 name: "Known Languages:",
-                value: "`Start learning one by using the name as a command.`\nJS (Javascript)"
+                value: "`Start learning one by using the name as a command.`\n**JS** (Javascript)"
             },
             {
                 name: "Contributors:",
-                value: "Proxxa#0574"
+                value: "https://www.github.com/Proxxaaa"
             }
         ],
         icon_url: message.author.avatarURL,
