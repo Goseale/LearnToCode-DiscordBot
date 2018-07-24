@@ -199,13 +199,22 @@ have any further questions, try doing `npm help` if it is a question on npm comm
             color: 777777
         }})
     } else
+    if (args.join(' ') === "Licenses") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - Licenses",
+            description: "Lets quickly go over what a license is. No, it isn't a fancy thing that allows you to code, \
+its a little file that shows who the creator of the app is, and what people who download it are allowed to do with it. \
+LearnToCode has an MIT license belonging to Proxxaaa. This means that people can redistribute and use the code however. \
+even commercially."
+        }})
+    } else
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
