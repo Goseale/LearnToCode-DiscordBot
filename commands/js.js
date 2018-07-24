@@ -184,8 +184,8 @@ package.json. You could hand write it, or let Node.js do it for you. Open up a c
 where your app.js, bot.js, index.js, or server.js will be stored using `dir` and `cd` (or other commands on a non-\
 windows OS.). Now run `npm init`. This will begin the process of setting up your package.json. First is the package \
 name. Next, our version number. Then a description. An \"Entry Point\", a test command (best left empty), now a git\
- repo. Then some keywords (For making your own npm package). Finally, the author name, A.K.A. your name. Exit at any \
-time by pressing `CTRL + C`",
+ repo. Then some keywords (For making your own npm package). Finally, the author name, A.K.A. your name. License may be \
+MIT or ISC. Exit any time by pressing `CTRL + C`",
         color: 777777
     }})
     } else
