@@ -41,6 +41,10 @@ client.on("ready", () => {
 // Usually, there would be a message handler here, but we're fancy and use things like exports. =)
 // All special events will be in the events folder as their own files while commands are in the commands folder in their own files.
 
+
+// Lets add our reload handler
+
+
 var reload = (message, cmd) => {
 	delete require.cache[require.resolve('./commands/' + cmd)];
 	try {

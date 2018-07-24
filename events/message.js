@@ -1,3 +1,4 @@
+console.log(`Loading message.js`)
 const settings = require('../settings.json')
 module.exports = message => {
 
