@@ -108,13 +108,61 @@ separate parameters. Use a parameter inside of the function (and only inside of)
             color: 777777,
         }})
     } else
+    if (args.join(' ') === "If Statements") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - If Statements",
+            description: "If you want to get anywhere near to a good JS app, you will absolutely need If Statements. \
+The code for this very bot's main purpose relies deeply on if statements. A basic discord bot would rely on if statements \
+for all commands, unless it is very powerful, and already uses command handlers. If statements look like this: \
+```js\nif (foo) {return 'bar'}\n``` This will \"return\" the string \"bar\" if the variable `foo` has a Truthy value. \
+A Truthy value is anything but `False`, `0`, `Null`, `Undefined`, or `NaN`. I could be wrong, but I believe negative \
+infinity is also False. There's also `conditions`, like `If I'm exactly like this guy, return true!`. Its entirely \
+like an inbuilt if statement, but smart and dumb at the same time. You need to put these inside of something so they \
+can be useful. Output if a variable is `1243`? Just log it to the console as a condition! If not, it says `false`. \
+if so, it says `true`! However, we can use an if statement to decrease the population of our totally real 'miniverse\
+' only if there's not enough food for everyone. ```js\nlet pop = math.random() * 5000 + 1;\n let sus = math.random\
+() * 5000 + 1;\nif (pop > sus) {pop = pop - (pop - sus)\nreturn 'They couldn\'t survive'\n};``` This code generates\
+ two variables, pop and sus, which \
+have values between 1 and 5000. If sustainability is lower than our population, we kill off everyone we can't sustain. \
+> and < work like they do in math. If you want to check if two values are exactly alike, use `===`, not one, not two\
+, **__three__**. If you want it to __NOT__ be exactly alike, use `!==`. This inverts it. If you want multiple things \
+to be true, type `&&` between each condition. If you want it to happen if one of X statements are true, use `||`.",
+            color: 777777,
+            fields: [
+                {
+                    name: "Try It!",
+                    value: "Here's a little project for you, think of a way to use this. If !== doesn't work, try an \
+empty `{}` and put `else {}` after and put the code in the else's brackets. You can also do `(!foo)` if you want \
+foo's value to be a falsy."
+                }
+            ] 
+        }})
+    } else
+    if (args.join(' ') === "Variables") {message.channel.send({embed:{
+        title: "LearnToCode BOT - Variables",
+        description: "There's three types of variables. Const, let, and var. Const variables are constant, you can't \
+change them using regular means. Set them once, and you're done. Let variables will let you define them, and then \
+you can forget about typing `let` for that variable again. Var variables are like `let`, except you always type `var`,\
+and they can be buggy. Lets say we want to create the variable `a` set to the string `hi`, and we will never want to \
+change it. `const a = 'hi'` will let us do that. If we want to be able to change it, lets use let. `let a = 'hi'`.\
+Oh wait, we want it to be capitalized! `a = 'Hi'` to change it. You can use var exactly like that, but to capitalize\
+our string, lets use `var a = 'Hi'`, because we always have to say var before our \"var\" var to recognize it as a var.",
+        fields: [
+            {
+                name: "Try it!",
+                value: "Create a const variable and try changing it. It errored! Now make a let variable and change it.\
+ Now how about a `var` variable? That was easy, wasn't it!"
+            }
+        ]
+    }})
+    } else
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
