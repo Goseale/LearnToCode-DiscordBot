@@ -15,6 +15,7 @@ module.exports = message => {
         cmdFile.run(client, message, args);
     } catch (err) {
         console.log(`Command ${command} failed\n${err.stack}`);
-        message.channel.send('Sorry, that doesn\'t seem to be a command!')
+        message.channel.send('Sorry, that doesn\'t seem to be a command!').then(res => res.delete(3000).catch(e =>
+        console.log(e.stack))).catch(e => console.log(e.stack))
     }
 }
