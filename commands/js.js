@@ -170,7 +170,23 @@ overwrite the global function, even if it is a constant.",
 Now outside of the function, call the function, then log `foo` to the console. It errors, because it is undefined. \
 Now define it to `null` outside of the function, but before we call it. It should've worked. Be careful, because you\
  might end up changing something you need to not change."
-        }]
+        }],
+        color: 777777
+    }})
+    } else
+    if (args[0].toLowerCase() === "npm" && args[1] === "Setup") {message.channel.send({embed:{
+        title: "LearnToCode BOT - NPM Setup",
+        description: "NPM is AMAZING for setting stuff up that you don't know how to do regularly, like a discord bot.\
+Yes, you could use Ruby, the language you're supposed to make a bot with (The regular stuff), or use JS, which you're\
+ learning here. There's many NPM \"Modules\" to install. Maybe you could make colored text in your `console.log`s \
+with `chalk`, or let your bot do some neat sound stuff with `ffmpeg-binaries`. First off, we need to set up our \
+package.json. You could hand write it, or let Node.js do it for you. Open up a command terminal, and navigate it to \
+where your app.js, bot.js, index.js, or server.js will be stored using `dir` and `cd` (or other commands on a non-\
+windows OS.). Now run `npm init`. This will begin the process of setting up your package.json. First is the package \
+name. Next, our version number. Then a description. An \"Entry Point\", a test command (best left empty), now a git\
+ repo. Then some keywords (For making your own npm package). Finally, the author name, A.K.A. your name. Exit at any \
+time by pressing `CTRL + C`",
+        color: 777777
     }})
     } else
         message.channel.send({
@@ -179,7 +195,7 @@ Now define it to `null` outside of the function, but before we call it. It shoul
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
