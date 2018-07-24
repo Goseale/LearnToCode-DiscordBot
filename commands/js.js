@@ -208,13 +208,31 @@ LearnToCode has an MIT license belonging to Proxxaaa. This means that people can
 even commercially."
         }})
     } else
+    if (args[0] === "External" && args[1] === "Files") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - External Files",
+            description: "To use external files, like other JS files, JSON files, or NPM Packages, \
+you need to use the `require()` function. require() allows you to start up and look inside of files. To start \
+a.js from inside of b.js, we can simply write `require('./a.js')`, but only if a.js is in the same file as b.js. \
+Lets say it isn't. Well, lets also say you're using Windows, and your user file is **`DiddyKong123`**. Lets also assume \
+its in the github repo file **`DiddyA`**. So `a.js` must be in the file \
+**`C:/Users/DiddyKong123/Documents/GitHub/DiddyA`**. All we do is replace the **.** with that path. Lets use a JSON \
+file to set all of our settings. So lets say **`index.js`** and **`settings.json`** are in the same folder to simplify \
+things for ourselves. At the top of our code, lets create a constant var that is called **`settings`**, and set it to \
+**`require('./settings.json')`**. Now lets say there's an item in the settings called `repo`. If we want the value of \
+that item, lets type our settings variable with a period (`.`) after it (`settings.`). Now add `repo`, the name of \
+the item. If we're logging settings.repo to the console, and repo was set to `\"Hello\"`, it would log `Hello` to \
+the console, of course. If we've installed a package called `chalk`, we'll use that package by making another const \
+variable, and requiring just the name of the package: **`const chalk = require('chalk')`**"
+        }})
+    } else
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n**External Files**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
