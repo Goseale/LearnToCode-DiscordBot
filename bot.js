@@ -35,8 +35,7 @@ console.log(`Attempting a startup at: ${new Date()}`);
 
 client.on("ready", () => {
   console.log(`Successfully launched on ${new Date()}, logged in as ${client.user.tag}`);
-  setInterval(120000, client.user.setActivity(`LearnToCodeBOT`));
-  setTimeout(60000, setInterval(120000,client.user.setActivity(`Prefix: ${prefix}`)))
+  client.user.setActivity(`LearnToCodeBOT | Prefix: ${prefix}`);
 });
 
 // Usually, there would be a message handler here, but we're fancy and use things like exports. =)
