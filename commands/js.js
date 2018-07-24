@@ -7,8 +7,9 @@ exports.run = function (client, message, args) {
                 description: "Welcome to the very basic basicness of JS. Primitive Types. \
 Very primitive to any Javascript Master. They come in four types. `Truthy/Falsy`, \
 `Undefined/Null`, `Number`, and `String`. `Truthy/Falsy` are as you can tell, `True` \
-and false. You literally type them as straight `True` and `False` in your code. `Undefined` \
-and `Null` are what output when there is no input, or real input. Finally, `Number`, you type them \
+and `False`. You literally type them as straight `True` and `False` in your code. `Undefined` \
+and `Null` are what output when there is no input, or real input (\"Imaginary Numbers\" like to call themselves \
+NaN). Finally, `Number`, you type them \
 just like `True`, `False`, `Undefined`, and `Null`, just type out the number, as simply as that. \
 Now for maybe the biggest of them all, `String`. This that you're reading is one big long string. \
 Thank goodness for long string shortcuts that I'm able to type it all out and __still__ be able to read \
@@ -22,7 +23,6 @@ Maybe even single quotes (') if you don't care to escape them with backslashes."
 ```js\nconsole.log(typeof(1))```\n and replace \"1\" with any of the primitive types. Then run the code."
                     }
                 ],
-                footer: "Author: Proxxa#0574"
 
             }
         })
@@ -50,10 +50,9 @@ Go ahead, I'll still be here. Now do `console.log(foobar.shift())`. It should've
 Now do `console.log(foobar[0])`. It should return the same thing. Right? Wrong. More on this in **Array Actions**."
                 },
             ],
-            footer: "Author: Proxxa#0574"
         }})
     } else
-    if (args[0] === "Array" && args[1] === "Actions") {
+    if (args.join(' ') === "Array Actions") {
         message.channel.send({embed:{
             color: 777777,
             title: "LearnToCode BOT - Array Actions",
@@ -70,7 +69,6 @@ eighth characters, use `slice(3,7)`.) with a comma (`,`). Characters are treated
 so rinse and repeat for your arrays. `pop()` is useful for taking away the LAST item from the end, and returning it \
 just like `shift()`. `push()` can add an item(s) to the end of the list, like this NEXT item. `unshift()` is just \
 like `push()`, but it adds items to the beginning, like the opposite of `shift()`.",
-            footer: "Author: Proxxa#0574",
             fields: [
                 {
                     name: "Try it!",
@@ -85,6 +83,29 @@ Now, I want you to log `func` before you log `func.pop()`. It should've logged j
 second time. Now log the regular array again, and it should have logged everything except for that last item.",
                 },
             ]
+        }}).catch(e => console.log(e.stack))
+    } else
+    if (args.join(' ') === "Basic Functions") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - Basic Functions",
+            description: "The basic function, very simple, yet oh so powerful. Its like a bookmark in your code \
+that you can execute at ANY time. Here's how you __create__ a simple function: ```js\nfunction() {\nvar foo = 'bar'\n}\n``` \
+This function simply creates a variable called `foo` set to the string `bar`. Not useful __at all__ because of \
+__scopes__. If you want to use it, just type `function()` wherever in your code, as long as it has an OK __scope__. \
+If we want this function to be useful, we need **parameters**. These go in the parenthesis (`()`), and we must \
+tell the function to ask for them. Here's a better function: ```js\nrandom(min,max) {\nlet diff = max - min;\n\
+return Math.floor((Math.random() * min) + diff)\n``` This will return a random integer between the inputs `min` \
+and `max`. Lets say our minimum is 1 and max is 6. We should call random() by using `random(1,6)`. Commas (`,`) \
+separate parameters. Use a parameter inside of the function (and only inside of) by calling it like a variable.",
+            fields: [
+                {
+                    name: "Try it!",
+                    value: "Create a function called `func`, with the parameter `tion`. Now tell the function to \
+\"Return\" (Look at second example above) the string `Hello World`, but only if `tion` === `1`. Otherwise, return \
+`foobar`."
+                }
+            ],
+            color: 777777,
         }})
     } else
         message.channel.send({
@@ -93,7 +114,7 @@ second time. Now log the regular array again, and it should have logged everythi
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Arrays**\n**Array Actions**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
