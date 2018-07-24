@@ -156,13 +156,30 @@ our string, lets use `var a = 'Hi'`, because we always have to say var before ou
         ]
     }})
     } else
+    if (args.join(' ') === "Scope") {message.channel.send({embed:{
+        title: "LearnToCode BOT - Scope",
+        description: "Now, if you think you can define a variable inside of a function and use it outside,\
+you're wrong. Very wrong. This is what we call __Scope__. If you define a variable at the very top of your code,\
+outside of __all__ functions, its in the __global scope__. However, if you define a variable in a function, it is \
+in the scope of that function. If the function was called `helloWorld`, it would be in the __helloWorld() scope__. \
+However, if you define a variable inside of a function, that has the same name as a global scope variable, it will \
+overwrite the global function, even if it is a constant.",
+        fields: [{
+            name: "Try it!",
+            value: "Create a function that defines the variable `foo`, set to the string `bar`.\
+Now outside of the function, call the function, then log `foo` to the console. It errors, because it is undefined. \
+Now define it to `null` outside of the function, but before we call it. It should've worked. Be careful, because you\
+ might end up changing something you need to not change."
+        }]
+    }})
+    } else
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n`Names are case sensitive`\n`~js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
