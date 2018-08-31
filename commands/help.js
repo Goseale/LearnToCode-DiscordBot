@@ -1,4 +1,5 @@
-const contributors = require('../contributors.json')
+const contributors = require("../contributors.json");
+let gitNameString = contributors.gitHubNames.join(", ");
 exports.run = function (client, message, args) {
     message.channel.send('`Recieved help command, please wait...`').then(response =>
     response.delete(3000).catch(error => console.log(error.stack))).catch(error => console.log(error.stack));
@@ -13,7 +14,7 @@ exports.run = function (client, message, args) {
             },
             {
                 name: "Contributors (GitHub):",
-                value: contributors.gitHubNames.join(", ").slice(contributors.gitHubNames.join(", ").length() - 2, contributors.gitHubNames.join(", ").length())
+                value: gitNameString
             }
         ],
         icon_url: message.author.avatarURL,
