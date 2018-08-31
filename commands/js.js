@@ -251,7 +251,14 @@ to **grapes.favorite**! If you have something named **worst**, then you should r
                 fields: [{
                     name: "Sections",
                     value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n**External Files**\n**Accessing JSON Files**\n`Names are case sensitive`\n`js <section>`"
-                }, ],
+                },
+                {   
+                    name: "Can't find something?",
+                    value: "**Don't worry!** There are tons of forums out there that are for \
+these sorts of things, like stackoverflow.com! Of course, there's always the wonders of \
+documentation. It does wonders, so if you need something new that we don't have, find it at \
+https://developer.mozilla.org/en-US/docs/Web/JavaScript and search for new things!"
+                } ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
                 picture: client.user.avatarURL,
