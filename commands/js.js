@@ -89,9 +89,9 @@ second time. Now log the regular array again, and it should have logged everythi
         message.channel.send({embed:{
             title: "LearnToCode BOT - Basic Functions",
             description: "The basic function, very simple, yet oh so powerful. Its like a bookmark in your code \
-that you can execute at ANY time. Here's how you __create__ a simple function: ```js\nfunction() {\nvar foo = 'bar'\n}\n``` \
+that you can execute at ANY time. Here's how you __create__ a simple function: ```js\nfunction funcOne() {\nvar foo = 'bar'\n}\n``` \
 This function simply creates a variable called `foo` set to the string `bar`. Not useful __at all__ because of \
-__scopes__. If you want to use it, just type `function()` wherever in your code, as long as it has an OK __scope__. \
+__scopes__. If you want to use it, just type `funcOne()` wherever in your code, as long as it has an OK __scope__. \
 If we want this function to be useful, we need **parameters**. These go in the parenthesis (`()`), and we must \
 tell the function to ask for them. Here's a better function: ```js\nrandom(min,max) {\nlet diff = max - min;\n\
 return Math.floor((Math.random() * diff) + min)\n``` This will return a random integer between the inputs `min` \
@@ -243,6 +243,26 @@ referenced correctly. Lets say we have inside of the file: **```json\n\
 to **grapes.favorite**! If you have something named **worst**, then you should reference to \
 **grapes.worst**."
         }})
+    } if (args[0] === "Advanced" && args[1] === "Array" && args[2] === "Actions") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - Advanced Array Actions",
+            color: 777777,
+            description: "Array actions don't just end at removing certain parts of an array \
+or string. Some go through every single item and do something to each, like **.fill()**! \
+.fill()'s job is to take every single item in the array and change it to something. If the \
+name of our array is **jelly**, and we want every existing item to now be set to the string \
+'Strawberry jelly is the best jelly!', then we run **jelly.fill('Strawberry jelly is the best\
+jelly!)** and then every one will be set to the string. A bit more advanced one is **.forEach\
+**. .forEach is best like an arrow function as long as you're getting something from the array. \
+of course, you can always use a **function callback(requested vars) {}** like the documentation \
+says, but we're sticking with our old pal the arrow function. Lets keep our jelly array. Now, \
+lets go through what vars we request. **jelly.forEach((value, index, array, arg) => {})** is \
+the simple code to get every single one. **value** is the value of the item in the array we're \
+checking, simple enough. **index** is which item it is, if we're doing something to the third \
+item right now, then index is the number `3`. **array** just returns the whole array that we're \
+dealing with, or the jelly array in our case. **arg** is useless, its just a way of doing **this**\
+if you're dealing with a .forEach in a .forEach, in which case it may be useful."
+        }})
     } else
         message.channel.send({
             embed: {
@@ -263,8 +283,9 @@ to **grapes.favorite**! If you have something named **worst**, then you should r
 \n**Licenses**\
 \n**External Files**\
 \n**Accessing JSON Files**\
+\n**Advanced Array Actions**\
 \n`Names are case sensitive`\
-\n`js <section>`"
+\n`Use: `**`js <section>`**"
                 },
                 {   
                     name: "Can't find something?",
