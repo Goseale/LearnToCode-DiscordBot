@@ -250,7 +250,21 @@ to **grapes.favorite**! If you have something named **worst**, then you should r
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n**External Files**\n**Accessing JSON Files**\n`Names are case sensitive`\n`js <section>`"
+                    value: "`Currently implemented sections include:`\
+\n**Primitive Types**\
+\n**Variables**\
+\n**If Statements**\
+\n**Arrays**\
+\n**Array Actions**\
+\n**Basic Functions**\
+\n**Scope**\
+\n**NPM Setup**\
+\n**NPM Package Installation**\
+\n**Licenses**\
+\n**External Files**\
+\n**Accessing JSON Files**\
+\n`Names are case sensitive`\
+\n`js <section>`"
                 },
                 {   
                     name: "Can't find something?",
