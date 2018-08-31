@@ -1,3 +1,4 @@
+const contributors = require('../contributors.json')
 exports.run = function (client, message, args) {
     message.channel.send('`Recieved help command, please wait...`').then(response =>
     response.delete(3000).catch(error => console.log(error.stack))).catch(error => console.log(error.stack));
@@ -11,8 +12,8 @@ exports.run = function (client, message, args) {
                 value: "`Start learning one by using the name as a command.`\n**JS** (Javascript)"
             },
             {
-                name: "Contributors:",
-                value: "https://www.github.com/Proxxaaa"
+                name: "Contributors (GitHub):",
+                value: contributors.gitHubNames.join(", ")
             }
         ],
         icon_url: message.author.avatarURL,
