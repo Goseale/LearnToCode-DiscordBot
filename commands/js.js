@@ -261,7 +261,8 @@ the simple code to get every single one. **value** is the value of the item in t
 checking, simple enough. **index** is which item it is, if we're doing something to the third \
 item right now, then index is the number `3`. **array** just returns the whole array that we're \
 dealing with, or the jelly array in our case. **arg** is useless, its just a way of doing **this**\
-if you're dealing with a .forEach in a .forEach, in which case it may be useful."
+if you're dealing with a .forEach in a .forEach, in which case it may be useful. forEach is \
+also a great way to log every single item of an array to the console."
         }})
     } else
         message.channel.send({
