@@ -204,7 +204,7 @@ have any further questions, try doing `npm help` if it is a question on npm comm
             title: "LearnToCode BOT - Licenses",
             description: "Lets quickly go over what a license is. No, it isn't a fancy thing that allows you to code, \
 its a little file that shows who the creator of the app is, and what people who download it are allowed to do with it. \
-LearnToCode has an MIT license belonging to Proxxaaa. This means that people can redistribute and use the code however. \
+LearnToCode has an MIT license belonging to Proxxaaa (Hey, the guy who wrote this!). This means that people can redistribute and use the code however. \
 even commercially."
         }})
     } else

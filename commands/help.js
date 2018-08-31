@@ -13,7 +13,7 @@ exports.run = function (client, message, args) {
             },
             {
                 name: "Contributors (GitHub):",
-                value: contributors.gitHubNames.join(", ")
+                value: contributors.gitHubNames.join(", ").slice(contributors.gitHubNames.join(", ").length() - 2, contributors.gitHubNames.join(", ").length())
             }
         ],
         icon_url: message.author.avatarURL,
