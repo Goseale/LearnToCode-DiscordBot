@@ -174,7 +174,7 @@ Now define it to `null` outside of the function, but before we call it. It shoul
         color: 777777
     }})
     } else
-    if (args[0].toLowerCase() === "npm" && args[1] === "Setup") {message.channel.send({embed:{
+    if (args[0] === "NPM" && args[1] === "Setup") {message.channel.send({embed:{
         title: "LearnToCode BOT - NPM Setup",
         description: "NPM is AMAZING for setting stuff up that you don't know how to do regularly, like a discord bot.\
 Yes, you could use Ruby, the language you're supposed to make a bot with (The regular stuff), or use JS, which you're\
@@ -211,19 +211,37 @@ even commercially."
     if (args[0] === "External" && args[1] === "Files") {
         message.channel.send({embed:{
             title: "LearnToCode BOT - External Files",
-            description: "To use external files, like other JS files, JSON files, or NPM Packages, \
-you need to use the `require()` function. require() allows you to start up and look inside of files. To start \
-a.js from inside of b.js, we can simply write `require('./a.js')`, but only if a.js is in the same file as b.js. \
-Lets say it isn't. Well, lets also say you're using Windows, and your user file is **`DiddyKong123`**. Lets also assume \
-its in the github repo file **`DiddyA`**. So `a.js` must be in the file \
-**`C:/Users/DiddyKong123/Documents/GitHub/DiddyA`**. All we do is replace the **.** with that path. Lets use a JSON \
-file to set all of our settings. So lets say **`index.js`** and **`settings.json`** are in the same folder to simplify \
-things for ourselves. At the top of our code, lets create a constant var that is called **`settings`**, and set it to \
-**`require('./settings.json')`**. Now lets say there's an item in the settings called `repo`. If we want the value of \
-that item, lets type our settings variable with a period (`.`) after it (`settings.`). Now add `repo`, the name of \
-the item. If we're logging settings.repo to the console, and repo was set to `\"Hello\"`, it would log `Hello` to \
-the console, of course. If we've installed a package called `chalk`, we'll use that package by making another const \
-variable, and requiring just the name of the package: **`const chalk = require('chalk')`**"
+            description: "Loading external files is great for things like settings files. \
+You can set a variable to a JSON file by setting it to require(\"./settings.json\"), or \
+whatever the path to the settings file is. You can also activate other JS files to run \
+along-side the main file, and even give those JS files variables to work with. The \
+code that handles the messages is triggered by an \"Event Loader\" which is loaded in by \
+the main `bot.js` that runs **\"require('./util/eventLoader')(client)\"**, which sends the \
+**'client'** variable to the file. The files must be ready for this, though. To receive \
+the variable properly, it must give it its own name. This can be the same name. To receive \
+it, the file contains the code **module.exports = client => {}**, and the code for running \
+the events is inside the curly brackets. If you want to send multiple, you can also do \
+**(client, message)** and this will send both the client and message variable, and you must \
+put both variables in parenthesis, and their names separated by commas. You can also load \
+NPM Packages into a variable to use the package using only a variable. To use 'chalk', you \
+can use the code **const chalk = require('chalk')**, but this only works if chalk is installed.",
+            color: 777777
+        }})
+    } else
+    if (args[0] === "Accessing" && args[1] === "JSON" && args[2] === "Files") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - Accessing JSON Files",
+            color: 777777,
+            description: "To access a JSON File's innards, you must first set a variable \
+to the wanted JSON File. Read **External Files** if you do not know how to do this. \
+This is extremely simple. Let's set up our example file and var. **let grapes = require(\
+'./grapes.json')** of course, this can be any var name and JSON file, as long as it is \
+referenced correctly. Lets say we have inside of the file: **```json\n\
+{\n\
+   \"favorite\": \"red\"\n\
+}\n```** We now have a variable set to the string **red**, all we need to do is reference \
+to **grapes.favorite**! If you have something named **worst**, then you should reference to \
+**grapes.worst**."
         }})
     } else
         message.channel.send({
@@ -232,7 +250,7 @@ variable, and requiring just the name of the package: **`const chalk = require('
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n**External Files**\n`Names are case sensitive`\n`~js <section>`"
+                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n**External Files**\n**Accessing JSON Files**\n`Names are case sensitive`\n`js <section>`"
                 }, ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
