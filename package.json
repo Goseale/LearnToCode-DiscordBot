@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Proxxaaa/LearnToCode-DiscordBot#readme",
   "dependencies": {
+    "chalk": "^2.4.1",
     "discord.js": "^11.3.2"
   }
 }
