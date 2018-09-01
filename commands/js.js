@@ -89,9 +89,9 @@ second time. Now log the regular array again, and it should have logged everythi
         message.channel.send({embed:{
             title: "LearnToCode BOT - Basic Functions",
             description: "The basic function, very simple, yet oh so powerful. Its like a bookmark in your code \
-that you can execute at ANY time. Here's how you __create__ a simple function: ```js\nfunction() {\nvar foo = 'bar'\n}\n``` \
+that you can execute at ANY time. Here's how you __create__ a simple function: ```js\nfunction funcOne() {\nvar foo = 'bar'\n}\n``` \
 This function simply creates a variable called `foo` set to the string `bar`. Not useful __at all__ because of \
-__scopes__. If you want to use it, just type `function()` wherever in your code, as long as it has an OK __scope__. \
+__scopes__. If you want to use it, just type `funcOne()` wherever in your code, as long as it has an OK __scope__. \
 If we want this function to be useful, we need **parameters**. These go in the parenthesis (`()`), and we must \
 tell the function to ask for them. Here's a better function: ```js\nrandom(min,max) {\nlet diff = max - min;\n\
 return Math.floor((Math.random() * diff) + min)\n``` This will return a random integer between the inputs `min` \
@@ -174,7 +174,7 @@ Now define it to `null` outside of the function, but before we call it. It shoul
         color: 777777
     }})
     } else
-    if (args[0].toLowerCase() === "npm" && args[1] === "Setup") {message.channel.send({embed:{
+    if (args[0] === "NPM" && args[1] === "Setup") {message.channel.send({embed:{
         title: "LearnToCode BOT - NPM Setup",
         description: "NPM is AMAZING for setting stuff up that you don't know how to do regularly, like a discord bot.\
 Yes, you could use Ruby, the language you're supposed to make a bot with (The regular stuff), or use JS, which you're\
@@ -204,39 +204,101 @@ have any further questions, try doing `npm help` if it is a question on npm comm
             title: "LearnToCode BOT - Licenses",
             description: "Lets quickly go over what a license is. No, it isn't a fancy thing that allows you to code, \
 its a little file that shows who the creator of the app is, and what people who download it are allowed to do with it. \
-LearnToCode has an MIT license belonging to Proxxaaa. This means that people can redistribute and use the code however. \
+LearnToCode has an MIT license belonging to Proxxaaa (Hey, the guy who wrote this!). This means that people can redistribute and use the code however. \
 even commercially."
         }})
     } else
     if (args[0] === "External" && args[1] === "Files") {
         message.channel.send({embed:{
             title: "LearnToCode BOT - External Files",
-            description: "To use external files, like other JS files, JSON files, or NPM Packages, \
-you need to use the `require()` function. require() allows you to start up and look inside of files. To start \
-a.js from inside of b.js, we can simply write `require('./a.js')`, but only if a.js is in the same file as b.js. \
-Lets say it isn't. Well, lets also say you're using Windows, and your user file is **`DiddyKong123`**. Lets also assume \
-its in the github repo file **`DiddyA`**. So `a.js` must be in the file \
-**`C:/Users/DiddyKong123/Documents/GitHub/DiddyA`**. All we do is replace the **.** with that path. Lets use a JSON \
-file to set all of our settings. So lets say **`index.js`** and **`settings.json`** are in the same folder to simplify \
-things for ourselves. At the top of our code, lets create a constant var that is called **`settings`**, and set it to \
-**`require('./settings.json')`**. Now lets say there's an item in the settings called `repo`. If we want the value of \
-that item, lets type our settings variable with a period (`.`) after it (`settings.`). Now add `repo`, the name of \
-the item. If we're logging settings.repo to the console, and repo was set to `\"Hello\"`, it would log `Hello` to \
-the console, of course. If we've installed a package called `chalk`, we'll use that package by making another const \
-variable, and requiring just the name of the package: **`const chalk = require('chalk')`**"
+            description: "Loading external files is great for things like settings files. \
+You can set a variable to a JSON file by setting it to require(\"./settings.json\"), or \
+whatever the path to the settings file is. You can also activate other JS files to run \
+along-side the main file, and even give those JS files variables to work with. The \
+code that handles the messages is triggered by an \"Event Loader\" which is loaded in by \
+the main `bot.js` that runs **\"require('./util/eventLoader')(client)\"**, which sends the \
+**'client'** variable to the file. The files must be ready for this, though. To receive \
+the variable properly, it must give it its own name. This can be the same name. To receive \
+it, the file contains the code **module.exports = client => {}**, and the code for running \
+the events is inside the curly brackets. If you want to send multiple, you can also do \
+**(client, message)** and this will send both the client and message variable, and you must \
+put both variables in parenthesis, and their names separated by commas. You can also load \
+NPM Packages into a variable to use the package using only a variable. To use 'chalk', you \
+can use the code **const chalk = require('chalk')**, but this only works if chalk is installed.",
+            color: 777777
         }})
     } else
+    if (args[0] === "Accessing" && args[1] === "JSON" && args[2] === "Files") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - Accessing JSON Files",
+            color: 777777,
+            description: "To access a JSON File's innards, you must first set a variable \
+to the wanted JSON File. Read **External Files** if you do not know how to do this. \
+This is extremely simple. Let's set up our example file and var. **let grapes = require(\
+'./grapes.json')** of course, this can be any var name and JSON file, as long as it is \
+referenced correctly. Lets say we have inside of the file: **```json\n\
+{\n\
+   \"favorite\": \"red\"\n\
+}\n```** We now have a variable set to the string **red**, all we need to do is reference \
+to **grapes.favorite**! If you have something named **worst**, then you should reference to \
+**grapes.worst**."
+        }})
+    } if (args[0] === "Advanced" && args[1] === "Array" && args[2] === "Actions") {
+        message.channel.send({embed:{
+            title: "LearnToCode BOT - Advanced Array Actions",
+            color: 777777,
+            description: "Array actions don't just end at removing certain parts of an array \
+or string. Some go through every single item and do something to each, like **.fill()**! \
+.fill()'s job is to take every single item in the array and change it to something. If the \
+name of our array is **jelly**, and we want every existing item to now be set to the string \
+'Strawberry jelly is the best jelly!', then we run **jelly.fill('Strawberry jelly is the best\
+jelly!)** and then every one will be set to the string. A bit more advanced one is **.forEach\
+**. .forEach is best like an arrow function as long as you're getting something from the array. \
+of course, you can always use a **function callback(requested vars) {}** like the documentation \
+says, but we're sticking with our old pal the arrow function. Lets keep our jelly array. Now, \
+lets go through what vars we request. **jelly.forEach((value, index, array, arg) => {})** is \
+the simple code to get every single one. **value** is the value of the item in the array we're \
+checking, simple enough. **index** is which item it is, if we're doing something to the third \
+item right now, then index is the number `3`. **array** just returns the whole array that we're \
+dealing with, or the jelly array in our case. **arg** is useless, its just a way of doing **this**\
+if you're dealing with a .forEach in a .forEach, in which case it may be useful. forEach is \
+also a great way to log every single item of an array to the console."
+        }})
+    } else if (!args[0]) {
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
                 description: `This is ${message.author.tag}'s request for the base \`JS\` command reply.`,
                 fields: [{
                     name: "Sections",
-                    value: "`Currently implemented sections include:`\n**Primitive Types**\n**Variables**\n**If Statements**\n**Arrays**\n**Array Actions**\n**Basic Functions**\n**Scope**\n**NPM Setup**\n**NPM Package Installation**\n**Licenses**\n**External Files**\n`Names are case sensitive`\n`~js <section>`"
-                }, ],
+                    value: "`Currently implemented sections include:`\
+\n**Primitive Types**\
+\n**Variables**\
+\n**If Statements**\
+\n**Arrays**\
+\n**Array Actions**\
+\n**Basic Functions**\
+\n**Scope**\
+\n**NPM Setup**\
+\n**NPM Package Installation**\
+\n**Licenses**\
+\n**External Files**\
+\n**Accessing JSON Files**\
+\n**Advanced Array Actions**\
+\n`Names are case sensitive`\
+\n`Use: `**`js <section>`**"
+                },
+                {   
+                    name: "Can't find something?",
+                    value: "**Don't worry!** There are tons of forums out there that are for \
+these sorts of things, like stackoverflow.com! Of course, there's always the wonders of \
+documentation. It does wonders, so if you need something new that we don't have, find it at \
+https://developer.mozilla.org/en-US/docs/Web/JavaScript and search for new things!"
+                } ],
                 color: 777777,
                 icon_url: client.user.avatarURL,
                 picture: client.user.avatarURL,
             }
         })
+    }
 };
