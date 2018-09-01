@@ -1,4 +1,5 @@
 const contributors = require("../contributors.json");
+const settings = require("../settings.json")
 let gitNameString = contributors.gitHubNames.join(", ");
 exports.run = function (client, message, args) {
     message.channel.send('`Recieved help command, please wait...`').then(response =>
@@ -13,8 +14,8 @@ exports.run = function (client, message, args) {
                 value: "`Start learning one by using the name as a command.`\n**JS** (Javascript)"
             },
             {
-                name: "Contributors (GitHub):",
-                value: gitNameString
+                name: "Contributors",
+                value: `Want a fancy list of the bot's contributors? just do \`${settings.prefix}contributors\`!`
             }
         ],
         icon_url: message.author.avatarURL,
