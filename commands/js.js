@@ -264,7 +264,7 @@ dealing with, or the jelly array in our case. **arg** is useless, its just a way
 if you're dealing with a .forEach in a .forEach, in which case it may be useful. forEach is \
 also a great way to log every single item of an array to the console."
         }})
-    } else
+    } else if (!args[0]) {
         message.channel.send({
             embed: {
                 title: "LearnToCode BOT - Javascript",
@@ -300,4 +300,5 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript and search for new thing
                 picture: client.user.avatarURL,
             }
         })
+    }
 };
