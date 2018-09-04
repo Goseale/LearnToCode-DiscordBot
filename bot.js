@@ -16,7 +16,7 @@ app.get("/", (request, response) => {
 app.listen(process.env.port);
 setInterval(() => {
 	http.get(`${process.env.host}`)
-}, 240000)
+}, 1790000)
 
 require('./util/eventLoader')(client);
 
