@@ -4,19 +4,6 @@ const token = process.env.botToken;
 const Discord = require('discord.js')
 const client = new Discord.Client()
 client.login(token)
-const express = require('express')
-const http = require('http')
-const app = express()
-
-app.get("/", (request, response) => {
-	console.log("Ping Received")
-	response.sendStatus(200)
-})
-
-app.listen(process.env.port);
-setInterval(() => {
-	http.get(`${process.env.host}:${process.env.port}`)
-}, 280000)
 
 require('./util/eventLoader')(client);
 
