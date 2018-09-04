@@ -17,32 +17,34 @@ const token = settings.token;
 // Obviously, don't include the /**/, those are to comment out that text. Keep the curly brackets, however.
 // Also, don't forget you need at least Node 6.0.0 and the latest version of Discord.JS to host your very own version of the bot.
 
-// Now to set up the environment.
 
 const Discord = require('discord.js')
 const client = new Discord.Client()
-client.login(token)
+client.login(process.env.botToken)
+const app = require('express')
+const http = require('http')
 
-// Now to load the base events, except for the ready event
+app.get("/", (request, response) => {
+	console.log("Ping Received")
+	response.sendStatus(200)
+})
+
+app.listen(process.env.port);
+setInterval(() => {
+	http.get(`${process.env.host}`)
+}, 240000)
 
 require('./util/eventLoader')(client);
 
-// Now we make the bot send special messages to the console on launch
 
 console.log(`Attempting a startup at: ${new Date()}`);
 
-// Now for successful launch message, and "activity"
 
 client.on("ready", () => {
   console.log(`Successfully launched on ${new Date()}, logged in as ${client.user.tag}`);
   client.user.setActivity(`LearnToCodeBOT | Prefix: ${prefix}`);
 });
 
-// Usually, there would be a message handler here, but we're fancy and use things like exports. =)
-// All special events will be in the events folder as their own files while commands are in the commands folder in their own files.
-
-
-// Lets add our reload handler
 
 
 var reload = (message, cmd) => {
