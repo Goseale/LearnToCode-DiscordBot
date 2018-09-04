@@ -11,6 +11,7 @@ const app = express()
 app.get("/", (request, response) => {
 	console.log("Ping Received")
 	response.sendFile('./favicon.ico')
+	response.sendFile('./send.html')
 })
 
 app.listen(process.env.port);
