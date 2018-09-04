@@ -1,5 +1,4 @@
-const settings = require('./settings.json');
-const prefix = settings.prefix;
+const prefix = process.env.prefix;
 const token = process.env.botToken;
 
 const Discord = require('discord.js')
