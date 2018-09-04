@@ -1,5 +1,5 @@
 const contributors = require("../contributors.json");
-const settings = require("../settings.json")
+const settings = process.env
 let gitNameString = contributors.gitHubNames.join(", ");
 exports.run = function (client, message, args) {
     message.channel.send('`Recieved help command, please wait...`').then(response =>
