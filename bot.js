@@ -10,7 +10,7 @@ const app = express()
 
 app.get("/", (request, response) => {
 	console.log("Ping Received")
-	response.send("Hello!")
+	response.sendStatus(200)
 })
 
 app.listen(process.env.port);
