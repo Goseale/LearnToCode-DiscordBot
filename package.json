@@ -4,7 +4,7 @@
   "description": "A basic open-source discordbot created to assist those who don't know how to code in learning to do so, without paying any sort of membership fees for services such as codecademy",
   "main": "bot.js",
   "scripts": {
-    "test": "echo \"Please edit test command to fit your needs. Exit by pressing Ctrl+C\""
+    "start": "node bot.js"
   },
   "repository": {
     "type": "git",
