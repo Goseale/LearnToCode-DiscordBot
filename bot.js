@@ -10,12 +10,12 @@ const app = express()
 
 app.get("/", (request, response) => {
 	console.log("Ping Received")
-	response.sendStatus(200)
+	response.sendFile('./send.html')
 })
 
 app.listen(process.env.port);
 setInterval(() => {
-	http.get(`${process.env.host}`)
+	http.get(`${process.env.host}:${process.env.port}`)
 }, 280000)
 
 require('./util/eventLoader')(client);
