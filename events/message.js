@@ -1,5 +1,5 @@
 console.log(`Loading message.js`)
-const settings = require('../settings.json')
+const settings = process.env
 module.exports = message => {
 
     let prefix = settings.prefix
